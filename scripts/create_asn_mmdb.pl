@@ -47,7 +47,7 @@ my $tree = MaxMind::DB::Writer::Tree->new(
 # Modifyed the code to read data from input file 
 #   and to create DB
 ###########
-my $config = LoadFile('../files/custom_asn_input.yml');
+my $config = LoadFile('../files/input/custom_asn_input.yml');
 
 # Perl hash to store YAML content
 my %address_of_network;
@@ -55,7 +55,7 @@ my %address_of_network;
 my $file_name = 'custom-ClientASN.mmdb';
 # Output file for mmdb creation
 
-my $output_file = '../files/Database/' . $file_name; 
+my $output_file = '../files/output/Database/' . $file_name; 
 
 for (keys %{$config}){
   my @org_network; #network might be an array
