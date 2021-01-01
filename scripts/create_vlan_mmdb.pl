@@ -49,7 +49,7 @@ my $tree = MaxMind::DB::Writer::Tree->new(
     # "description" is a hashref where the keys are language names and the
     # values are descriptions of the database in that language.
     description =>
-        { en => 'HEAnet Services Network VLAN database', },
+        { en => 'Service Network VLAN database', },
 
     # "ip_version" can be either 4 or 6
     # Mentioning IP version as 6 will support IPv4 too
@@ -65,15 +65,15 @@ my $tree = MaxMind::DB::Writer::Tree->new(
 ############
 # YB - Modifyed the code to create mmdb from yaml file
 ###########
-my $config = LoadFile('../files/heanet_vlan.yml');
+my $config = LoadFile('../files/custom_vlan_input.yml');
 
 # Perl hash to store YAML content
 my %address_of_network;
 
-my $file_name = 'HEAnet-Service-Network-VLAN.mmdb';
+my $file_name = 'Custom-Service-Network-VLAN.mmdb';
 # Output file for mmdb creation
 
-my $output_file = '../files/Database/' . $file_name; 
+my $output_file = '../files/output/Database/' . $file_name; 
 
 for (keys %{$config}){
   my @services_network; #network might be an array
